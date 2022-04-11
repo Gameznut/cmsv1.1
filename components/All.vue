@@ -3,17 +3,19 @@
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides bg-[blue]">
         <li
-          class="glide__slide flex justify-center items-center p-3 bg-[orange]"
+          class="glide__slide flex flex-col justify-center items-center p-3 bg-[orange]"
         >
+         <Card/>
          <Card/>
         </li>
         <li
-          class="glide__slide flex justify-center items-center p-3 bg-[#ff1a25]"
+          class="glide__slide flex flex-col justify-center items-center p-3 bg-[#ff1a25]"
         >
+         <Card/>
           <Card/>
         </li>
         <li
-          class="glide__slide flex justify-center items-center p-3 bg-[yellow]"
+          class="glide__slide flex flex-col justify-center items-center p-3 bg-[yellow]"
         >
           <!-- > - Move one forward <br />
           &lt; - Move one backward <br />
@@ -21,6 +23,7 @@
           <br />
           >> - Rewinds to the end (last slide) <br />
           &lt;&lt; - Rewinds to the start (first slide) -->
+         <Card/>
           <Card/>
         </li>
       </ul>
