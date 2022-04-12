@@ -55,10 +55,10 @@ export default {};
 <style scoped>
 .card2 {
   display: grid;
-  /* width: 320px; */
+  /* max-width: 450px; */
   gap: 1.5rem;
   transition: 0.4s;
-  background-color: rgb(190, 236, 236);
+    background-color: rgb(240, 236, 236);
 }
 .card2-img img {
   max-width: 450px;
@@ -72,6 +72,8 @@ export default {};
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  width: 100%;
+  padding: 0 1rem .4rem ;
 }
 
 .card2-contents .card2-small {
