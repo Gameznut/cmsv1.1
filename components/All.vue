@@ -127,7 +127,7 @@ ul li img {
 }
 .glide__arrows span {
   background-color: rgb(248, 244, 2) !important;
-  box-shadow: none;
+  /* box-shadow: none; */
   transition: 0.4s;
   color: black;
   font-size: 20px;

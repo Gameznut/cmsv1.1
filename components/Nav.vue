@@ -9,6 +9,9 @@
 
       <ul class="flex menu">
         <li class="nav-item">
+          <nuxt-link class="nav-link" to="/next">Next</nuxt-link>
+        </li>
+        <li class="nav-item">
           <nuxt-link class="nav-link" to="/about">About</nuxt-link>
         </li>
         <li class="nav-item">
