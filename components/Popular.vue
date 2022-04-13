@@ -1,19 +1,81 @@
 <template>
-  <div>
-    <div class="popular relative">
-      <h1 class="heading">
-        <span><font-awesome-icon icon="fa-solid fa-bolt-lightning" /></span>
-        popular
-      </h1>
-      <Card2 class="test" />
-      <Card2 class="test" />
-      <Card2 class="test" />
+  <client-only>
+    <div>
+      <div class="popular relative">
+        <h1 class="heading">
+          <span><font-awesome-icon icon="fa-solid fa-bolt-lightning" /></span>
+          popular
+        </h1>
+        <Card2  v-for="(popular, i) in populars.slice(0,3)" :popular="popular" :key="i" class="test" />
+      </div>
     </div>
-  </div>
+  </client-only>
 </template>
 
-    <style scoped>
 
+<script>
+export default {
+  data(){
+    return{
+      populars: [
+        {
+          imgs: "food",
+          name: "Emmanuel Apabiekun",
+          profile: "people4",
+          title: "Egg salad",
+          difficult: "Super Easy",
+          description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
+            soluta optio accusamus voluptatibus, culpa earum eaque, qui corrupti
+            deleniti error ipsa?`,
+          date : new Date().toDateString(),
+          duration: 40
+        },
+        {
+          imgs: "food1",
+          name: "Emmanuel Apabiekun",
+          profile: "people1",
+          title: "Cake",
+          difficult: "Super Easy",
+          description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
+            soluta optio accusamus voluptatibus, culpa earum eaque, qui corrupti
+            deleniti error ipsa?`,
+          date : new Date().toDateString(),
+          duration: 35
+
+        },
+        {
+          imgs: "food2",
+          name: "Emmanuel Apabiekun",
+          profile: "peopl2",
+          title: "Chesse cake",
+          difficult: "Super Easy",
+          description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
+            soluta optio accusamus voluptatibus, culpa earum eaque, qui corrupti
+            deleniti error ipsa?`,
+          date : new Date().toDateString(),
+          duration: 20
+
+        },
+        {
+          imgs: "food3",
+          name: "Apabiekun Emmanuel",
+          profile: "people3",
+          title: "Chesse cake",
+          difficult: "Super Easy",
+          description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
+            soluta optio accusamus voluptatibus, culpa earum eaque, qui corrupti
+            deleniti error ipsa?`,
+          date : new Date().toDateString(),
+          duration: 40
+
+        },
+      ],
+    }
+  },
+}
+</script>
+
+    <style scoped>
 .popular {
   grid-template-columns: repeat(3, 1fr);
   display: grid;
@@ -24,7 +86,7 @@
 .heading {
   display: flex;
   text-transform: uppercase;
-  background-color: gold;
+  background-color: rgb(219, 190, 22);
   gap: 0.8rem;
   padding: 0.7rem;
   font-size: 17px;
@@ -32,6 +94,9 @@
   width: max-content;
   position: absolute;
   z-index: 30;
+}
+.heading span {
+  color: azure;
 }
 
 @media screen and (max-width: 768px) {
