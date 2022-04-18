@@ -92,6 +92,13 @@ export default {};
     display: block;
     font-size: 14px;
   }
+  .latest_contents {
+  padding: .7rem;
+  gap: .7rem;
+}
+.section {
+    gap: 0.4rem;
+  }
 }
 
 @media screen and (max-width: 540px) {

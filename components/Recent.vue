@@ -14,11 +14,8 @@
             <small><font-awesome-icon icon="fa-solid fa-tag" /> Healthy</small>
           </div>
           <h1>Vegan Beef</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            voluptate asperiores placeat ipsa rerum fuga nesciunt repellat
-            labore quaerat officia!
-          </p>
+          <p v-if="mobile">{{ newText }}</p>
+          <p v-else>{{ text }}</p>
         </div>
       </div>
     </div>
@@ -26,7 +23,59 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
+      text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+            voluptate asperiores placeat ipsa rerum fuga nesciunt repellat
+            labore quaerat officia!`,
+      newText: "",
+    };
+  },
+  mounted() {
+    if (process.browser) {
+      window.addEventListener("resize", this.checkScreen);
+      // this.checkScreen();
+    }
+
+  },
+  methods: {
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 412 && this.windowWidth >= 300) {
+        const newText = this.text.slice(0, 60);
+        const result = newText.concat("...");
+        this.mobile = true
+        if (this.text.length > 70) {
+          this.newText = result;
+        }
+        else {
+        this.text;
+      }
+      }else if(this.windowWidth <= 290) {
+        const newText = this.text.slice(0, 40);
+        const result = newText.concat("...");
+        this.mobile = true
+        if (this.text.length > 50) {
+          this.newText = result;
+        }
+        else {
+        this.text;
+      }
+      }
+      else{
+        this.mobile = false
+
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -38,7 +87,6 @@ export default {};
 }
 
 .recent_img img {
-  /* max-width: 650px; */
   width: 100%;
   height: 300px;
   transition: 0.4s;
@@ -70,7 +118,7 @@ export default {};
     height: 250px;
   }
   .recent_contents {
-    max-width: 350px;
+    max-width: 300px;
   }
 }
 
@@ -83,7 +131,7 @@ export default {};
     height: 200px;
   }
   .recent_contents {
-    max-width: 300px;
+    max-width: 250px;
   }
   .recent_contents p {
     font-size: 16px;
@@ -101,12 +149,6 @@ export default {};
   .recent_contents h1 {
     font-size: 18px;
   }
-  .recent_contents p {
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 
 @media screen and (max-width: 393px) {
@@ -121,9 +163,6 @@ export default {};
   }
   .recent_contents {
     max-width: 150px;
-  }
-  .recent_contents p {
-    display: none;
   }
 }
 
@@ -141,9 +180,6 @@ export default {};
   .recent_contents {
     max-width: 150px;
   }
-  .recent_contents p {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 290px) {
@@ -153,10 +189,7 @@ export default {};
 
   .recent_img img {
     width: 100%;
-    height: 100px;
-  }
-  .recent_contents {
-    max-width: 100px;
+    height: 120px;
   }
 }
 </style>>

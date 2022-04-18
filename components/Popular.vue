@@ -99,7 +99,7 @@ export default {
   color: azure;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .popular {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -109,6 +109,7 @@ export default {
     display: none;
   }
 }
+
 
 @media screen and (max-width: 425px) {
   .popular {

@@ -143,6 +143,22 @@ export default {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1090px) {
+ .card2-footer-icons {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+}
+
+@media screen and (max-width: 990px) {
+ .card2-footer-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+}
+
 @media screen and (max-width: 620px) {
   .card2 {
     gap: 1rem;
@@ -175,6 +191,7 @@ export default {
 
   .card2-footer-icons {
     display: flex;
+    flex-direction: column;
     gap: 0.8rem;
   }
 
@@ -186,13 +203,18 @@ export default {
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 560px) {
  .card2-footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 0.9rem;
+  }
+   .card2-footer-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
   }
 }
 

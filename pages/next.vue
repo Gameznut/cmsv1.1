@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Recent />
+    <Recent2 />
     <All class="mt-[5rem]" />
   </div>
 </template>
